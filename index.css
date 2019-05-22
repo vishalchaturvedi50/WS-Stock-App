@@ -1,0 +1,73 @@
+/* VARIABLE DECLARATION */
+:root {
+  --bg-color: #23343f;
+  --thead-color: #b2b4c1;
+  --thead-bg: #1b1e24;
+  --one-em: 1em;
+}
+
+body {
+  display: flex; /* FLEX BOX */
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  background: var(--bg-color);
+}
+
+.tbl-stock-def {
+  min-width: 60%;
+  text-align: center;
+  border-spacing: 0;
+}
+
+.tbl-stock-def > thead > tr {
+  color: var(--thead-color);
+  font-size: var(--one-em);
+  font-weight: 100;
+  padding: var(--one-em);
+}
+.tbl-stock-def > thead > tr > th {
+  padding: var(--one-em);
+  background: var(--thead-bg);
+  position: sticky; /* STICKY POSITION TO HAVE THEAD STICK */
+  top: 0;
+  font-variant: common-ligatures;
+  font-weight: 300;
+}
+
+.tbl-stock-def > tbody > tr {
+  font-weight: 300;
+  font-size: 1.2em;
+}
+
+.tbl-stock-def > tbody > tr > td {
+  padding: 0.3em;
+}
+
+.tbl-stock-def > tbody > tr > td:last-child {
+  font-size: 0.8em;
+}
+
+.tbl-stock-def > tbody > tr > td:first-child {
+  font-variant: all-petite-caps;
+  font-size: 1.5em;
+}
+
+.tbl-stock-def > tbody > tr:nth-child(2n + 1) {
+  background: #ebebeb;
+}
+
+.tbl-stock-def > tbody > tr:nth-child(2n) {
+  background: whitesmoke;
+}
+
+td[pricetrend="up"] {
+  background: #00e750;
+  color: #3c3030;
+}
+
+td[pricetrend="down"] {
+  background: #ca1d24ab;
+  color: #fdeeee;
+}
