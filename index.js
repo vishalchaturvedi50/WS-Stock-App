@@ -1,6 +1,6 @@
 
 /* Define and declare socketUrl */
-const socketUrl = "wss://stocks.mnet.website";
+const socketUrl = "ws://stocks.mnet.website";
 
 /* TBL Body Id */
 const tblBlockId = 'tbl-stock';
