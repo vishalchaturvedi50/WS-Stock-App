@@ -63,11 +63,9 @@ body {
 }
 
 td[pricetrend="up"] {
-  background: #00e750;
-  color: #3c3030;
+  border-bottom: 5px solid #00e750;
 }
 
 td[pricetrend="down"] {
-  background: #ca1d24ab;
-  color: #fdeeee;
+  border-bottom: 5px solid #ca1d24ab;
 }

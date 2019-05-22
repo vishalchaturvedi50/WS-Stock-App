@@ -1,6 +1,6 @@
 
 /* Define and declare socketUrl */
-const socketUrl = "wss://stocks.mnet.website";
+const socketUrl = "ws://stocks.mnet.website";
 
 /* TBL Body Id */
 const tblBlockId = 'tbl-stock';
@@ -14,7 +14,11 @@ const priceTrendAttribute = 'pricetrend';
 /* CURRENT TIME */
 let currentTime = undefined;
 
-/*  */
+/* column in tr for price  */
+const stockPriceCol = 1;
+
+/* column in tr for last updated time */
+const stockLastUpdatedCol = 2;
 
 /* Function to control web socket  */
 function webSocketConnectionFn() {
@@ -134,7 +138,7 @@ function createChildForTbodyFn(name, price) {
 function modifyChildForTbodyFn(price, reqChildElem) {
     /* as we know we have stock price at second location hence 
     we can directly select the required children */
-    let stockPriceChild = reqChildElem.children.item(1);
+    let stockPriceChild = reqChildElem.children.item(stockPriceCol);
 
     /* Get the previous price */
     let prevPrice = parseInt(stockPriceChild.innerHTML);
@@ -145,7 +149,7 @@ function modifyChildForTbodyFn(price, reqChildElem) {
     /* set the attributeval for priceTrendAttribute */
     stockPriceChild.setAttribute(priceTrendAttribute, attributeVal);
     /* We know that second element is last updated time hence update it with currentime */
-    reqChildElem.children.item(2).innerHTML = currentTime;
+    reqChildElem.children.item(stockLastUpdatedCol).innerHTML = currentTime;
 }
 
 /* IIFE which attach's a function on document onload and calls the webSocketConnectionFn */
